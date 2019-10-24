@@ -1,0 +1,33 @@
+{
+    "name": "nepalerp",
+    "version": "1.0.0",
+    "description": "MEAN, enterprise resource management",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "scss": "node-sass --watch scss -o css"
+    },
+    "keywords": [
+        "MEAN",
+        "Mongo",
+        "Express",
+        "Node",
+        "Angular",
+        "ERP"
+    ],
+    "author": "roshan",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.6.10",
+        "morgan": "^1.9.1",
+        "node-sass": "^4.12.0",
+        "nodemailer": "^6.3.0",
+        "password-hash": "^1.2.2",
+        "randomstring": "^1.1.5",
+        "request": "^2.88.0",
+        "requests": "^0.3.0"
+    }
+}
