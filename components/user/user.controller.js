@@ -1,4 +1,7 @@
 const Userquery = require('./user.query.js');
+const passwordHash = require('password-hash');
+const jwt = require('jsonwebtoken');
+const config = require('./../../config');
 
 
 function addUser(req,res,next){
@@ -13,8 +16,6 @@ function addUser(req,res,next){
 }
 
 function updateUser(req,res,next){
-
-    console.log('id' , req.params.id);
       Userquery.update_user(req.params.id, req.body)
         .then(function(data) {
             res.json(data);
@@ -60,10 +61,37 @@ function findById(req,res,next){
 }
 
 
+function login(req,res,next){
+    Userquery.fetch_user({ username: req.body.username })
+        .then(function(user){
+            var isMatched = passwordHash.verify(req.body.password, user.password);
+            if (isMatched) {
+                var token = jwt.sign({ id: user._id, name: user.name, role: user.role_id }, config.jwtSecret);
+                res.json({
+                    user,
+                    token
+                });
+            } else {
+                next({
+                    msg: 'invalid credentials'
+                })
+            }
+
+        })
+        .catch(function(error){
+            next({
+                msg: "invalid credentials"
+            })
+        })
+
+}
+
+
 module.exports = {
     addUser,
     updateUser,
     getUsers,
     removeUser,
-    findById
+    findById,
+    login
 }

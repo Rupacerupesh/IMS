@@ -82,7 +82,6 @@ function remove_this_component_from_db(model, id) {
 }
 
 
-
 function find_component_with_this_id(model, id) {
     return model.findById(id)
 }
@@ -100,5 +99,4 @@ module.exports = {
     fetch_one_from_component,
     find_component_with_this_id,
     find_component_and_remove_by_id
-
 }
