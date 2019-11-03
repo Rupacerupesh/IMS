@@ -13,6 +13,8 @@ const CourseSchema = new schema({
 	description: String,
 	status: Boolean,
 	image: String
+},{
+	timestamps:true
 
 })
 
