@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 
-const StudentSchema = new schema({
+const StudentSchema = new Schema({
 
 	name: {
 		type: String,
@@ -17,7 +17,11 @@ const StudentSchema = new schema({
 	image: String,
 	phone: String,
 	address: String,
-	studentcategory: [{ type: mongoose.Schema.Types.ObjectId, ref: 'studentcategory' }],
+	studentcategory: [{
+        type: Schema.Types.ObjectId,
+        ref: 'studentcategory'
+    }],
+
 	gender: {
 		type: String,
 		enum: ['Male','Female','Others']

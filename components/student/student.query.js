@@ -26,8 +26,8 @@ function component_object_mapper(db_obj, component_obj) {
     if (component_obj.address)
         db_obj.address = component_obj.address;
 
-    if (component_obj.studentategory)
-        db_obj.studentategory = component_obj.studentcategory;
+    if (component_obj.studentcategory)
+        db_obj.studentcategory = component_obj.studentcategory;
 
     if (component_obj.gender)
         db_obj.gender = component_obj.gender;
