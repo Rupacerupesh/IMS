@@ -13,7 +13,7 @@ const SectionSchema = new schema({
 
 })
 
-const SectionModel = mongoose.model('batch',SectionSchema);
+const SectionModel = mongoose.model('section',SectionSchema);
 module.exports = SectionModel;
 
 

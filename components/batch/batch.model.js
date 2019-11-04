@@ -8,7 +8,7 @@ const BatchSchema = new schema({
 		type: String,
 		required: true
 	},
-	date: Number,
+	year: String,
 	month: String
 },{
 	timestamps:true

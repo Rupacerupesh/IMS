@@ -7,8 +7,8 @@ function component_object_mapper(db_obj, component_obj) {
     if (component_obj.name)
         db_obj.name = component_obj.name;
 
-    if (component_obj.date)
-        db_obj.date = component_obj.date;
+    if (component_obj.year)
+        db_obj.year = component_obj.year;
 
     if (component_obj.month)
         db_obj.month = component_obj.month;
